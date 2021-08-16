@@ -43,8 +43,7 @@
   <span class="dot" onclick="currentSlide(4)"></span> 
   <span class="dot" onclick="currentSlide(5)"></span> 
   <span class="dot" onclick="currentSlide(6)"></span> 
-</div><br>
-
+</div>
  <div class="slideshow-container"> 
    <div class="w3-light-grey">
       <div id="myBar">0%</div>
