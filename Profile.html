@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      html
+  {
+      font-size:62.5%;
+  }
+      .header
+      {
+          font-size: 5rem;
+          left: 60%;
+          top: 0;
+      }
+      .mainicon
+      {
+          text-align: right;
+          left: 90%;
+          top: 0;
+          margin-top: 0rem;
+      }
+.btn:hover
+{
+  background-color:blue;
+  color:white;
+}
+.btnstyle:hover {
+  background-color: #4CAF50;
+color: white;
+}
+.wrapper{
+    overflow: hidden;
+    max-width: 39rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0rem 1.5rem 2rem rgba(0,0,0,0.1);
+    background-color: antiquewhite;
+    margin-top: 4rem;
+    margin-left: 5rem;
+  }
+
+
+@media(max-width: 998px) {
+  html
+  {
+      font-size:55%;
+  }
+}
+@media(max-width: 768px) {
+  html
+  {
+      font-size:45%;
+  }
+}
+</style>
+
+</head>
+<body>
+<div class="main">
+    <div class = "header">
+        <image src = "logo.jpg" style="height: 5rem;width: 5rem;"> &nbsp;BeFriends</image>
+    
+        <button class = "btnstyle" onclick = "location.href='Favourites.php'" style="width:5rem;height:5rem;margin-left:70%"><image src = "favourite.jfif" style="height: 4rem;width: 4rem;"></button>
+            <button class = "btnstyle" onclick = "location.href='Profile.htm'" style="width:5rem;height:5rem;"><image src = "profile.png" style="height: 4rem;width: 4rem;"></image></button>
+    </div>
+    <div class = "body">
+        <hr>
+        <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login
+            </div>
+            <div class="title signup">
+               Registration
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="hospital" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="hospital" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Registration</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="hospital" method = "get">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" name = "email" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" name = "password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="login" name = "submit">
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" name = "email" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" name = "password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm Password" name = "cpaswword" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Register" name = "submit">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.hospital");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+      </script>

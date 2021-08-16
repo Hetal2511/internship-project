@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BeFriend</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		.left
+		{
+			width: 33.33%;
+			float: left;
+			padding: 30px 50px;
+		}
+		.right{
+			width: 33.33%;
+			float: left;
+		}
+	</style>
+	</head>
+<body>
+	<div class="topnav">
+		<a class="active" href="NewWebpage.html"><img src="images/Logo.png" width="40" height="40" alt="">BeFriend</a>
+	</div>
+	<div class = "body">
+	<div style="text-align:center;" class = "left">
+		<br>
+		<img src="images/mood image.jpg" height="520" width="520" style="padding: 20px;"/>
+	</div>
+	<div class="right">
+	
+	<div style="text-align:center;">
+		<br>
+		<h4>How's your mood today?</h4>
+		<button style='font-size:50px;' class="button1" id="happyButton">&#128515;<br> Happy </button>
+		<button style='font-size:50px;' class="button1" id="sadButton">&#128532;<br> Sad </button><br><br>
+		<button style='font-size:50px;' class="button1" id="angryButton">&#128544;<br> Angry </button>
+		<button style='font-size:50px;' class="button1" id="excitedButton">&#129321;<br> Excited </button><br><br>
+		<button style='font-size:50px;' class="button1" id="fearButton">&#128552;<br> Fear </button>
+		<button style='font-size:50px;' class="button1" id="boredButton">&#128530;<br> Bored </button>
+	</div>
+	</div>
+	
+	<script type="text/javascript">
+		document.getElementById("happyButton").onclick = function () {
+			location.href = "HappyEmotion.php";
+		};
+		document.getElementById("sadButton").onclick = function () {
+			location.href = "SadEmotion.php";
+		};
+		document.getElementById("angryButton").onclick = function () {
+			location.href = "AngryEmotion.php";
+		};
+		document.getElementById("excitedButton").onclick = function () {
+			location.href = "ExcitedEmotion.php";
+		};
+		document.getElementById("fearButton").onclick = function () {
+			location.href = "FearEmotion.php";
+		};
+		document.getElementById("boredButton").onclick = function () {
+			location.href = "BoredEmotion.php";
+		};
+	</script>
+
+</body>
+</html>
