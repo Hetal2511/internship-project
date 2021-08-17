@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>BeFriend</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
-
-  <style>
-.btn {
-  background-color: darkmagenta;
-  border: none;
-  color: black;
-  padding: .5rem 1rem;
-  font-size: 1rem;
-  left: 100px;
-}
-.btn:hover
-{
-    background-color:blue;
-    color:white;
-}
-</style>
+	<link rel="stylesheet" href="css/style.css">
+	<script rel="text/javascript" href="js/jquery-3.6.0.js"></script>
+	
+	<style>
+		.btn {
+		  background-color: darkmagenta;
+		  border: none;
+		  color: black;
+		  padding: .5rem 1rem;
+		  font-size: 1rem;
+		  left: 100px;
+		  z-index: 10;
+		}
+		.btn:hover
+		{
+			background-color:blue;
+			color:white;
+		}
+	</style>
 	</head>
 <body>
 	<div class="topnav">
-		<a href="NewWebpage.html"><img src="Logo.png" width="40" height="40" alt="">BeFriend</a>
-	</div>
-
-<!-- <div id="nav" class="nav slideshow-container"> 
-   <div class="w3-light-grey">
-      <div id="myBar">0%</div>
-    </div>
-    <br>
-    <button class="button" id="buttonForProgress" onclick="like()">Like</button>
-</div>
-
-<div class="row slideshow-container">
-  <div class="column">
-    <img src="https://wallpapercave.com/wp/wp2659309.jpg" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlGRdQXB1ssZ7x0W5kAlDygvj2aN-7idUBpQ&usqp=CAU" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="https://cdn.wallpapersafari.com/42/2/5SIYl1.jpg" style="width:100%">
-  </div>
- </div>  -->
-
-<script src="JavaScript.js"></script>
-<br>
-<br>
-
-<?php
-
-
-$con = mysql_connect("localhost","root","") or die("Server Error : ".mysql_error());
+			<a href="NewWebpage.html"><img src="images/Logo.png" width="40" height="40" alt="">BeFriend</a>
+		</div>
+		
+	<?php
+	$con = mysql_connect("localhost","root","") or die("Server Error : ".mysql_error());
 	mysql_select_db("befriends") or die("Database Error : ".mysql_error());
-	
 
     $sql = "SELECT * FROM data where Mood = 'happy'";
     $result = mysql_query($sql);
-
-    while($row = mysql_fetch_array($result))
+	?>
+	<div class="row">
+	  <div class="column1">
+		<div id="grad1">
+		  <div id="bar">
+			<div id="status">0%</div>
+		  </div>
+		 </div>
+	  </div>
+<div class="slideshow-container">
+	  <?php 
+	while($row = mysql_fetch_array($result))
     {
-
-      ?>
-  
-  <div class="slideshow-container">
-<div class="mySlides fade">
-   <video width = "1300px" height = "500px" controls>
-                <source src = "videos\<?php echo $row['Data']?>" type="video/ogg">
-            </video>
-            <br>
-            <br>
-            <a href = "videos\<?php echo $row['Data']?>" class = "btn" style="text-decoration:none;"> Download </a>
-            <?php
-              // $like = $row['data'];
-              //       $caption = $row['about'];
-                    ?>
-            
-&nbsp;&nbsp;&nbsp;<?php echo $row['Text']?>
-<br>
-<br>
+	?>
+	 <div class="mySlides fade">
+	<video id="myVideo" width = "1250px" height = "610px" autoplay>
+		<source src="videos/<?php echo $row['Data']?>" type="video/mp4">
+	</video>
+	<br>
+	<br>
+	<a href = "videos/<?php echo $row['Data']?>" download class = "btn" style="text-decoration:none;"><i class="fa fa-download"></i> Download</a>
+	&nbsp;&nbsp;&nbsp;<?php echo $row['Text']?>
+	<br>
+	<br>
 </div>
-  
- </div> 
-      
-        <?php
-    }
-  
-    ?>
+		<?php 
+		}
+		?>	
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		<br>
+			<br>
+		<button class="button" id="button" onclick="like()">Like</button>
+		<button class="button" id="button1" onclick="dislike()">Dislike</button>
+
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		  <span class="dot" onclick="currentSlide(4)"></span> 
+		  <span class="dot" onclick="currentSlide(5)"></span> 
+		  <span class="dot" onclick="currentSlide(6)"></span> 
+		</div><br>
+	</div>
+	
+	  </div>
+	</div>
+<script src="js/JavaScript.js"></script>
+ <script>
+    var aud = document.getElementById("myVideo");
+    var a=0;
+    aud.onended = function() {
+       a=a+1;
+       if(a!=3)
+       {
+        aud.play();
+        }
+    };
+    </script>
 </body>
 </html> 

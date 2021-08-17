@@ -1,7 +1,4 @@
-function myFunction(x) {
-  x.classList.toggle("fa-thumbs-down");
-}
-
+//for slider---------start----------//
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -28,40 +25,46 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+//for slider----------End----------//
 
-var elem = document.getElementById("myBar");
-var width = 0;
+//function for like button
+var elem = document.getElementById("status");
+var h = 0;
 var id = null;
 var click = false;
 function like() {
-if(!click){
-  click = true;
+ if(!click){
+	 click=true;
   id = setInterval(function() {
-    width++;
-    if (width > 75) document.getElementById("buttonForProgress").disabled=true;
-    if (width % 15 === 0){
+	h++;
+	 document.getElementById("bar").style.height =
+       h + "%";
+  if (h > 75) {
+	  document.getElementById("button").disabled=true;
+	  document.getElementById("button1").disabled=true;
+	  }
+    if (h % 15 === 0){
     clearInterval(id);
     click = false;
     }
-    elem.style.width = width + '%';
-    elem.innerHTML = width * 1 + '%';
+    elem.style.h = h + '%';
+    elem.innerHTML = h * 1 + '%';
   }, 15);
-}
-}
+}}
 
-/* dislike button */
+//function for dislike button
 function dislike() {
 if(!click){
   click = true;
   id = setInterval(function() {
-    width--;
-   
-    if (width % 15 === 0){
+    h--;
+   document.getElementById("bar").style.height = h + "%";
+    if (h % 15 === 0){
     clearInterval(id);
     click = false;
     }
-    elem.style.width = width + '%';
-    elem.innerHTML = width * 1 + '%';
+    elem.style.h = h + '%';
+    elem.innerHTML = h * 1 + '%';
   }, 15);
 }
 }
