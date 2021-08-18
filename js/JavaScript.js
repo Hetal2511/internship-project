@@ -51,8 +51,7 @@ function like() {
     elem.innerHTML = h * 1 + '%';
   }, 15);
 }}
-
-//function for dislike button
+/*
 function dislike() {
 if(!click){
   click = true;
@@ -67,4 +66,4 @@ if(!click){
     elem.innerHTML = h * 1 + '%';
   }, 15);
 }
-}
+}*/

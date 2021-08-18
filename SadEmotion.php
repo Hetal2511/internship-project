@@ -51,22 +51,17 @@
 	<video id="myVideo" width = "1250px" height = "610px" autoplay controls>
 		<source src="videos/<?php echo $row['Data']?>" type="video/mp4">
 	</video>
-	<br>
-	<br>
-	<a href = "videos/<?php echo $row['Data']?>" download class = "btn" style="text-decoration:none;"><i class="fa fa-download"></i> Download</a>
-	&nbsp;&nbsp;&nbsp;<?php echo $row['Text']?>
-	<br>
-	<br>
+	<!--<a href = "videos/<?php echo $row['Data']?>" download class = "btn" style="text-decoration:none;"><i class="fa fa-download"></i> Download</a>
+	&nbsp;&nbsp;&nbsp;<?php echo $row['Text']?>-->
 </div>
 		<?php 
 		}
 		?>	
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		<br>
-			<br>
+	
 		<button class="button" id="button" onclick="like()">Like</button>
-		<button class="button" id="button1" onclick="dislike()">Dislike</button>
+		<button class="button" id="button1" onclick="dislike()"></button>
 
 		<div style="text-align:center">
 		  <span class="dot" onclick="currentSlide(1)"></span> 
@@ -75,7 +70,7 @@
 		  <span class="dot" onclick="currentSlide(4)"></span> 
 		  <span class="dot" onclick="currentSlide(5)"></span> 
 		  <span class="dot" onclick="currentSlide(6)"></span> 
-		</div><br>
+		</div>
 	</div>
 	
 	  </div>
