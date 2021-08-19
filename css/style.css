@@ -24,7 +24,6 @@ body {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
 }
 
 /* Position the "next button" to the right */
@@ -139,3 +138,20 @@ button.liked i{
   transform: rotate(180deg);
 }
 /* mood bar-------------End---------------*/
+
+/* button for download */
+	/*.btn {
+	  background-color: darkmagenta;
+	  border: none;
+	  color: black;
+	  padding: .5rem 1rem;
+	  font-size: 1rem;
+	  left: 100px;
+	  z-index: 10;
+	}
+	.btn:hover
+	{
+		background-color:blue;
+		color:white;
+	}*/
+/*end of download button */

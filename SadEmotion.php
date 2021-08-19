@@ -48,7 +48,7 @@
     {
 	?>
 	 <div class="mySlides fade">
-	<video id="myVideo" width = "1250px" height = "610px" autoplay controls>
+	<video id="myVideo" width = "1260px" height = "610px" controls>
 		<source src="videos/<?php echo $row['Data']?>" type="video/mp4">
 	</video>
 	<!--<a href = "videos/<?php echo $row['Data']?>" download class = "btn" style="text-decoration:none;"><i class="fa fa-download"></i> Download</a>
@@ -84,7 +84,7 @@
        if(a!=3)
        {
         aud.play();
-        }
+       }
     };
     </script>
 </body>
